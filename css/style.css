@@ -32,22 +32,17 @@ body {
     align-items: center;
 }
 header {
+    height: 4rem;
     width: 100%;
+    padding: 0 1.25rem;
     z-index: 1;
     position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .header-scrolled {
-    width: 100%;
-    z-index: 1;
-    position: fixed;
-    background: rgba(44, 44, 44, 0.712);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-}
-.inner__header {
-    justify-content: space-between;
-    height: 2rem;
+    animation: glass 0.5s linear both;
 }
 .logo a {
     font: 700 1.5625rem 'Montserrat', sans-serif;
@@ -63,15 +58,21 @@ header {
 .hero {
     width: 100%;
     height: 90vh;
+    margin-bottom: 10vh;
     clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
     background: linear-gradient(
             to right,
-            rgba(20, 196, 208, 0.2),
-            rgba(255, 0, 204, 0.2)
+            rgba(20, 196, 208, 0.3),
+            rgba(255, 0, 204, 0.3)
         ),
         url(https://pullman.accor.com/destinations/imagerie/guarulhos-hero-1400x788-9d74_1400x788.jpg)
             no-repeat center;
     background-size: cover;
+    background-attachment: fixed;
+    animation: fade-out-in 0.5s linear both reverse;
+}
+.hero-scrolled {
+    animation: fade-out-in 3s linear both;
 }
 .hero__text {
     height: 100%;
@@ -80,6 +81,29 @@ header {
     gap: 5px;
 }
 .hero__text h2 {
-    font: 500 5rem 'Montserrat', sans-serif;
+    font: 700 5rem 'Montserrat', sans-serif;
     text-align: center;
+}
+
+@keyframes glass {
+    0% {
+    }
+    100% {
+        background: rgba(44, 44, 44, 0.712);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        height: 2rem;
+    }
+}
+@keyframes fade-out-in {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 480px) {
 }
