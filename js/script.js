@@ -1,5 +1,5 @@
 const header = document.querySelector('header');
-const sectionHero = document.querySelector('.hero');
+const sectionHero = document.querySelector('#hero');
 
 const sectionOneOptiHero = {
     rootMargin: '-300px 0px 0px 0px',
